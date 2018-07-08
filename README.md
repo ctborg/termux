@@ -1,6 +1,11 @@
-# termux
+# Installing Google-Cloud-SDK on a Chromebook
+A short set of instructions to allow you to install the google-cloud-sdk on a chromebook. 
 
-### install google-cloud-sdk
+## Install Termux
+First install termux from the Google Play Store (https://termux.com/)
+
+The do one of the following:
+## install google-cloud-sdk
 
     scratch=$(mktemp -d -t tmp.XXXXXXXXXX) 
 
@@ -46,7 +51,7 @@
     tar -czf google-cloud-sdk-207.0.0-linux-x86_64__TERMUX.tar.gz google-cloud-sdk/
 
 
-### download and install 
+### OR - download and install 
     export CLOUDSDK_PYTHON=/data/data/com.termux/files/usr/bin/python2.7
     curl -k https://storage.googleapis.com/termux-gcloud-sdk/google-cloud-sdk-207.0.0-linux-x86_64__TERMUX.tar.gz -O
     tar -xzf google-cloud-sdk-207.0.0-linux-x86_64__TERMUX.tar.gz
@@ -55,5 +60,5 @@
     
     echo 'export CLOUDSDK_PYTHON="python2.7"' >> $HOME/.bashrc
     echo 'export PATH="/data/data/com.termux/files/home/google-cloud-sdk/bin:$PATH"' >> $HOME/.bashrc
-    
-    
+
+Depending on your version of ChromeOS, you may not be able to edit permissions on your /bin folder.  Simply run the commands usings `bash`.  e.g. `bash gcloud app deploy`
